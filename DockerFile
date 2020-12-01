@@ -1,5 +1,6 @@
 FROM alpine:latest
 COPY frpc_linux_amd64 frpc
+RUN chmod +x frpc_linux_amd64
 
 WORKDIR /
-ENTRYPOINT ["sh", "-c", "frpc_linux_amd64", "${channel}"]
+ENTRYPOINT ["docker-entrypoint.sh"]
